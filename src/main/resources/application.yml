@@ -1,0 +1,22 @@
+spring:
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 数据库中要提前创建 activiti7-db 数据库
+    url: jdbc:mysql://192.168.0.181:3801/activiti7?serverTimezone=Asia/Shanghai&characterEncoding=UTF-8&nullCatalogMeansCurrent=true&useSSL=false&useLegacyDatetimeCode=false
+    username: root
+    password: root
+
+  activiti:
+    # 日志配置 级别
+    history-level: full
+    # db-history-used默认false(只创建17张表)   true(25张表)
+    db-history-used: true
+    # 自动部署验证设置:true-开启（默认）、false-关闭  如果开启默认查找 classpath:/process/*
+    # 如果resources下没有process目录 check-process-definitions设置为true会报错
+    check-process-definitions: false
+
+
+# mybatis-plus配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*
